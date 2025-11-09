@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Home - Stadium Spotlight";
+const pageDescription = "Discover the timeless passion and glory of football through Stadium Spotlight, celebrating vintage heritage and iconic moments in the beautiful game.";
+
+const features = [
+  {
+    title: "Rich Archives",
+    description: "Dive into curated stories from football's golden eras, featuring iconic players, unforgettable matches, and stadiums that became legends.",
+    icon: "fas fa-book-open"
+  },
+  {
+    title: "Vintage Vibes",
+    description: "Experience the game through nostalgic lenses, with classic imagery, retro analyses, and tributes to the pioneers who shaped the sport.",
+    icon: "fas fa-vest"
+  },
+  {
+    title: "Community Passion",
+    description: "Join fellow enthusiasts in celebrating the glory days—share your memories, discuss classic tactics, and connect with football's heritage.",
+    icon: "fas fa-users"
+  }
+];
+
+const testimonials = [
+  {
+    quote: "This site captures the essence of football's golden age perfectly.",
+    author: "Mike Thompson, Football Historian"
+  },
+  {
+    quote: "I've rediscovered so many forgotten gems from football history.",
+    author: "Sarah Jenkins, Former Player"
+  },
+  {
+    quote: "The attention to detail in every article is remarkable.",
+    author: "Robert Chen, Museum Curator"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-[#DC143C] to-[#8B0000] py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-wide">
+          <span class="block">Welcome to</span>
+          <span class="block mt-2 text-[#FFD700]">Stadium Spotlight</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-[#FFD700] mb-8 font-serif">Illuminating Football's Timeless Passion and Glory</p>
+        <p class="text-lg text-white max-w-2xl mx-auto mb-10">
+          Step into the roaring stands of history, where the echoes of legendary goals and thunderous crowds still resonate. 
+          At Stadium Spotlight, we honor the bold vintage heritage of football—the sport that unites nations, ignites dreams, and forges unbreakable bonds.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-[#FFD700] hover:bg-[#FFA500] text-[#8B0000] font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Explore Stories
+          </button>
+          <button class="bg-transparent border-2 border-white hover:bg-white hover:text-[#8B0000] text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300">
+            Join Community
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gradient-to-b from-[#F5F5F5] to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#8B0000] mb-4">Why Stadium Spotlight?</h2>
+        <div class="w-24 h-1 bg-[#FFD700] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-[#DC143C] transform hover:-translate-y-2">
+            <div class="w-16 h-16 rounded-full bg-[#DC143C] flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-2xl text-white`}></i>
+            </div>
+            <h3 class="text-2xl font-bold text-[#8B0000] mb-4">{feature.title}</h3>
+            <p class="text-gray-700 leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gradient-to-r from-[#8B0000] to-[#4B0000]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Community Voices</h2>
+        <div class="w-24 h-1 bg-[#FFD700] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 border border-white border-opacity-20">
+            <div class="text-[#FFD700] text-4xl mb-4">"</div>
+            <p class="text-white text-lg mb-6 italic">{testimonial.quote}</p>
+            <p class="text-[#FFD700] font-semibold">— {testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-20 bg-gradient-to-b from-[#F5F5F5] to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto bg-gradient-to-r from-[#DC143C] to-[#8B0000] rounded-2xl p-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Join Our Football Heritage Community</h2>
+        <p class="text-xl text-[#FFD700] mb-8 max-w-2xl mx-auto">
+          Be part of a movement that preserves and celebrates the timeless moments that define football's soul.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-[#FFD700] hover:bg-[#FFA500] text-[#8B0000] font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <i class="fas fa-users mr-2"></i> Connect With Us
+          </button>
+          <button class="bg-transparent border-2 border-white hover:bg-white hover:text-[#8B0000] text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300">
+            <i class="fas fa-book mr-2"></i> Explore Archives
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#000000] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold text-[#FFD700]">Stadium Spotlight</h3>
+          <p class="mt-2 text-gray-400">Celebrating Football's Golden Era</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-[#FFD700] transition-colors">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-[#FFD700] transition-colors">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-[#FFD700] transition-colors">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-[#FFD700] transition-colors">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+        <p>&copy; {new Date().getFullYear()} Stadium Spotlight. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+  
+  .hero-bg {
+    background: linear-gradient(rgba(220, 20, 60, 0.9), rgba(139, 0, 0, 0.9)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23DC143C"/><path d="M0 0L100 100M100 0L0 100" stroke="%238B0000" stroke-width="1"/></svg>');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .feature-card:hover {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .gradient-border {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box, 
+                linear-gradient(45deg, #DC143C, #FFD700) border-box;
+  }
+  
+  .gradient-border:hover {
+    background: linear-gradient(white, white) padding-box, 
+                linear-gradient(45deg, #FFD700, #DC143C) border-box;
+  }
+</style>

@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Stadium Spotlight Community";
+const pageDescription = "Dive into a vibrant hub where football fans unite to celebrate the sport's rich heritage, share timeless stories, and connect over shared passions in the spirit of vintage glory.";
+
+const communityFeatures = [
+  {
+    icon: "fas fa-trophy",
+    title: "Share Epic Tales",
+    description: "Post your favorite stadium memories, from roaring crowds at historic grounds to iconic goals that etched history."
+  },
+  {
+    icon: "fas fa-comments",
+    title: "Engage in Lively Debates",
+    description: "Discuss classic rivalries, legendary players, and the evolution of the beautiful game."
+  },
+  {
+    icon: "fas fa-compass",
+    title: "Discover Vintage Vibes",
+    description: "Explore curated content on football's golden eras, complete with retro photos, match highlights, and expert insights."
+  }
+];
+
+const testimonials = [
+  {
+    name: "Michael Thompson",
+    role: "Season Ticket Holder",
+    content: "This community brought back memories of my first match at Old Trafford in 1992. Pure magic!"
+  },
+  {
+    name: "Sarah Williams",
+    role: "Historian & Collector",
+    content: "The vintage photos and stories here are absolutely incredible. A treasure trove of football history."
+  },
+  {
+    name: "James Rodriguez",
+    role: "New Fan",
+    content: "As someone new to football, this community helped me appreciate the game's rich heritage and tradition."
+  }
+];
+
+const events = [
+  {
+    title: "Classic Stadium Tour",
+    date: "Jun 15, 2023",
+    location: "Wembley Stadium"
+  },
+  {
+    title: "Legends of the Game Panel",
+    date: "Jul 22, 2023",
+    location: "Old Trafford"
+  },
+  {
+    title: "Retro Match Reunion",
+    date: "Aug 5, 2023",
+    location: "Anfield"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-primary to-accent py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-20"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
+          Stadium Spotlight Community
+        </h1>
+        <p class="text-xl md:text-2xl text-accent font-serif mb-8">
+          Illuminating Football's Timeless Passion and Glory
+        </p>
+        <p class="text-lg text-white max-w-2xl mx-auto mb-10">
+          Dive into a vibrant hub where football fans unite to celebrate the sport's rich heritage, 
+          share timeless stories, and connect over shared passions in the spirit of vintage glory.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+            Join Our Community
+          </button>
+          <button class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-primary transition duration-300">
+            Explore Stories
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Welcome to the Stadium Spotlight Community</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg border-l-8 border-primary">
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+          <i class="fas fa-quote-left text-accent text-2xl mr-2"></i>
+          Illuminating Football's Timeless Passion and Glory – that's our promise, and here in the community, we bring it to life. 
+          Whether you're a lifelong supporter reminiscing about legendary matches or a new fan discovering the thrill of the game, 
+          this is your space to connect, discuss, and celebrate the bold heritage of football.
+          <i class="fas fa-quote-right text-accent text-2xl ml-2"></i>
+        </p>
+        <div class="flex items-center">
+          <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+          <div class="ml-4">
+            <p class="font-serif font-bold text-gray-800">- The Stadium Spotlight Team</p>
+            <p class="text-gray-600">Preserving Football's Legacy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Why Join Our Community?</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {communityFeatures.map((feature, index) => (
+          <div 
+            class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg border border-gray-100 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+            key={index}
+          >
+            <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">{feature.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-gradient-to-br from-primary to-accent">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Community Voices</h2>
+        <p class="text-accent max-w-2xl mx-auto">Hear from our passionate members about their experiences</p>
+        <div class="w-24 h-1 bg-white mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div 
+            class="bg-white p-8 rounded-xl shadow-lg transform transition duration-300 hover:scale-105"
+            key={index}
+          >
+            <div class="flex items-center mb-6">
+              <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+              <div class="ml-4">
+                <h4 class="font-bold text-gray-800">{testimonial.name}</h4>
+                <p class="text-accent text-sm">{testimonial.role}</p>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">"{testimonial.content}"</p>
+            <div class="flex mt-4">
+              {[...Array(5)].map((_, i) => (
+                <i key={i} class="fas fa-star text-yellow-400"></i>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Upcoming Community Events</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Join us in celebrating football's rich heritage</p>
+        <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {events.map((event, index) => (
+            <div 
+              class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transform transition duration-300 hover:-translate-y-1"
+              key={index}
+            >
+              <div class="h-48 bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+                <i class="fas fa-futbol text-white text-5xl"></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">{event.title}</h3>
+                <div class="flex items-center text-gray-600 mb-3">
+                  <i class="far fa-calendar-alt mr-2"></i>
+                  <span>{event.date}</span>
+                </div>
+                <div class="flex items-center text-gray-600 mb-4">
+                  <i class="fas fa-map-marker-alt mr-2"></i>
+                  <span>{event.location}</span>
+                </div>
+                <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-red-800 transition duration-300">
+                  Register Now
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-accent">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Ready to Join the Community?</h2>
+      <p class="text-xl text-accent max-w-2xl mx-auto mb-10">
+        Be part of something bigger – where football history comes alive and stories are shared
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+          Sign Up Today
+        </button>
+        <button class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-primary transition duration-300">
+          View Membership
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .hero-pattern {
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(220, 20, 60, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 20%);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

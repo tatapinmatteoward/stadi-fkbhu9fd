@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Latest Goals";
+const pageDescription = "Discover the most electrifying goals from recent football matches, celebrating the timeless thrill that defines the beautiful game on Stadium Spotlight.";
+
+const goals = [
+  {
+    id: 1,
+    title: "Premier League Thriller",
+    player: "Erling Haaland",
+    team: "Manchester City",
+    description: "Unleashes a rocket from 25 yards, sealing Manchester City's 3-2 victory over Arsenal. A goal reminiscent of the bold volleys from the 1970s glory days.",
+    match: "Manchester City vs Arsenal",
+    date: "2023-04-15"
+  },
+  {
+    id: 2,
+    title: "Champions League Drama",
+    player: "Kylian Mbappé",
+    team: "Paris Saint-Germain",
+    description: "Dances past defenders to slot home Paris Saint-Germain's equalizer against Real Madrid. Pure vintage flair meets contemporary speed.",
+    match: "PSG vs Real Madrid",
+    date: "2023-04-12"
+  },
+  {
+    id: 3,
+    title: "Serie A Spectacle",
+    player: "Victor Osimhen",
+    team: "Napoli",
+    description: "Scored a stunning overhead kick to secure Napoli's 2-1 victory over Juventus in a thrilling Serie A encounter.",
+    match: "Napoli vs Juventus",
+    date: "2023-04-10"
+  },
+  {
+    id: 4,
+    title: "La Liga Magnifico",
+    player: "Robert Lewandowski",
+    team: "Barcelona",
+    description: "Netted a spectacular bicycle kick goal in Barcelona's 3-1 win against Villarreal, showcasing the elegance of vintage football.",
+    match: "Barcelona vs Villarreal",
+    date: "2023-04-08"
+  }
+];
+
+const highlights = [
+  "Thunderous strikes that echo through stadiums",
+  "Delicate chips that showcase football's artistry",
+  "Contemporary brilliance with vintage soul",
+  "Legends in the making, heroes in the present"
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="relative">
+    {/* Hero Section */}
+    <div class="bg-gradient-to-r from-[#DC143C] to-[#8B0000] py-24">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-wide">
+          Latest Goals
+        </h1>
+        <div class="w-24 h-1 bg-[#FFD700] mx-auto mb-8"></div>
+        <p class="text-xl md:text-2xl text-[#FFD700] max-w-3xl mx-auto leading-relaxed">
+          Igniting the Fire of Football's Greatest Moments
+        </p>
+      </div>
+    </div>
+
+    {/* Tagline Section */}
+    <div class="bg-[#1a1a1a] py-12">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col items-center text-center">
+          <i class="fas fa-star text-[#FFD700] text-3xl mb-4"></i>
+          <p class="text-xl text-white font-serif italic max-w-3xl">
+            *Illuminating Football's Timeless Passion and Glory*
+          </p>
+          <p class="text-gray-300 mt-6 max-w-4xl">
+            In the heart of the pitch, where legends are forged, the latest goals capture the essence of football's enduring spirit. 
+            From thunderous strikes to delicate chips, these moments echo the vintage heroism of yesteryears while igniting modern fervor.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Highlights Section */}
+    <div class="py-16 bg-[#0d0d0d]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-white mb-12">
+          Recent Highlights
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {highlights.map((highlight, index) => (
+            <div 
+              key={index} 
+              class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] border border-[#FFD700] rounded-lg p-6 transform transition-all duration-300 hover:scale-105"
+            >
+              <div class="flex items-center mb-4">
+                <div class="w-3 h-3 bg-[#DC143C] rounded-full mr-3"></div>
+                <span class="text-[#FFD700] font-bold">HIGHLIGHT {index + 1}</span>
+              </div>
+              <p class="text-gray-300">{highlight}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Goals Grid */}
+    <div class="py-16 bg-gradient-to-b from-[#0d0d0d] to-[#1a1a1a]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-white mb-4">Electric Moments</h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Each goal tells a story of passion, skill, and the beautiful game's timeless magic
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {goals.map((goal) => (
+            <div 
+              key={goal.id} 
+              class="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-xl border-2 border-[#DC143C] overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:shadow-[#DC143C]/20"
+            >
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-white">{goal.title}</h3>
+                    <div class="flex items-center mt-1">
+                      <span class="text-[#FFD700] font-semibold">{goal.player}</span>
+                      <span class="mx-2 text-gray-500">•</span>
+                      <span class="text-gray-400">{goal.team}</span>
+                    </div>
+                  </div>
+                  <div class="bg-[#DC143C] text-white px-3 py-1 rounded-full text-sm font-bold">
+                    {goal.date}
+                  </div>
+                </div>
+                
+                <div class="h-px bg-gradient-to-r from-transparent via-[#FFD700] to-transparent my-4"></div>
+                
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                  {goal.description}
+                </p>
+                
+                <div class="mt-6">
+                  <div class="flex items-center text-gray-500 text-sm mb-2">
+                    <i class="fas fa-futbol mr-2"></i>
+                    <span>{goal.match}</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full bg-[#8B0000] flex items-center justify-center mr-3">
+                        <i class="fas fa-trophy text-[#FFD700]"></i>
+                      </div>
+                      <span class="text-gray-400">Match Recap</span>
+                    </div>
+                    <button class="bg-[#DC143C] hover:bg-[#b50029] text-white px-5 py-2 rounded-full font-semibold transition-colors duration-300 transform hover:scale-105">
+                      Watch Replay
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Call to Action */}
+    <div class="py-20 bg-gradient-to-r from-[#1a1a1a] to-[#0d0d0d] border-t border-[#DC143C]">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold text-white mb-6">Continue the Legacy</h2>
+        <p class="text-gray-400 max-w-3xl mx-auto mb-10 text-xl">
+          Join thousands who celebrate the timeless artistry of football with every goal
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-[#DC143C] hover:bg-[#b50029] text-white px-8 py-4 rounded-full font-bold text-lg transition-colors duration-300 transform hover:scale-105">
+            Subscribe to Goals Newsletter
+          </button>
+          <button class="bg-transparent border-2 border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-[#1a1a1a] px-8 py-4 rounded-full font-bold text-lg transition-colors duration-300">
+            Explore Full Highlights
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .pulse-border {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 20, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); }
+  }
+  
+  .goal-card:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+</style>

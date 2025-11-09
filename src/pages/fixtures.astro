@@ -1,0 +1,249 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Fixtures - Upcoming Matches";
+const pageDescription = "Discover the thrilling upcoming fixtures in the world of football, where history and passion collide on the pitch. Stay updated with Stadium Spotlight's vintage-inspired schedule.";
+
+const fixtures = [
+  {
+    date: "Sat, Oct 15",
+    home: "Manchester United",
+    away: "Liverpool",
+    venue: "Old Trafford",
+    notes: "Historic rivalry"
+  },
+  {
+    date: "Sun, Oct 16",
+    home: "Chelsea",
+    away: "Arsenal",
+    venue: "Stamford Bridge",
+    notes: "North London Derby"
+  },
+  {
+    date: "Sat, Oct 22",
+    home: "Real Madrid",
+    away: "Barcelona",
+    venue: "Santiago Bernabeu",
+    notes: "El Clasico"
+  },
+  {
+    date: "Sun, Oct 23",
+    home: "Bayern Munich",
+    away: "Borussia Dortmund",
+    venue: "Allianz Arena",
+    notes: "Bavarian Derby"
+  },
+  {
+    date: "Sat, Oct 29",
+    home: "Juventus",
+    away: "AC Milan",
+    venue: "Allianz Stadium",
+    notes: "Derby della Madonnina"
+  },
+  {
+    date: "Sun, Oct 30",
+    home: "PSG",
+    away: "Marseille",
+    venue: "Parc des Princes",
+    notes: "Le Classique"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-[#DC143C] to-[#8B0000] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-wide">
+          Fixtures
+        </h1>
+        <p class="text-xl md:text-2xl text-[#FFD700] font-serif italic mb-8">
+          Where Legends Are Born
+        </p>
+        <div class="w-24 h-1 bg-[#FFD700] mx-auto mb-6"></div>
+        <p class="text-lg text-white max-w-2xl mx-auto">
+          Illuminating Football's Timeless Passion and Glory
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <section class="py-16 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 mb-16 border-l-8 border-[#DC143C]">
+          <h2 class="text-3xl font-serif font-bold text-gray-800 mb-4">
+            <i class="fas fa-trophy text-[#DC143C] mr-2"></i> 
+            Upcoming Matches
+          </h2>
+          <p class="text-gray-600 mb-6">
+            Get ready for the action! Here's a glimpse of the fixtures that will light up stadiums across the league. 
+            We've highlighted key rivalries and historic venues to transport you back to football's golden eras.
+          </p>
+          <div class="flex items-center">
+            <div class="bg-[#FFD700] w-12 h-12 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-star text-[#8B0000] text-xl"></i>
+            </div>
+            <p class="text-gray-700 italic">
+              <span class="font-bold text-[#DC143C]">Stadium Spotlight</span> celebrates the bold vintage heritage of football, 
+              where every match echoes the roars of yesteryear's crowds.
+            </p>
+          </div>
+        </div>
+
+        <!-- Fixtures Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          {fixtures.map((fixture, index) => (
+            <div 
+              class="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              style="--delay: {index * 100}ms"
+            >
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <span class="inline-block bg-[#DC143C] text-white text-xs font-bold px-3 py-1 rounded-full">
+                      {fixture.date}
+                    </span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="text-xs bg-[#FFD700] text-[#8B0000] px-2 py-1 rounded font-bold">
+                      {fixture.notes}
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="flex items-center justify-between mb-4">
+                  <div class="text-center">
+                    <div class="text-sm text-gray-500 mb-1">HOME</div>
+                    <h3 class="font-bold text-lg text-gray-800">{fixture.home}</h3>
+                  </div>
+                  
+                  <div class="text-center">
+                    <div class="text-gray-500 mb-1">VS</div>
+                    <div class="text-xs text-gray-400">VIA</div>
+                  </div>
+                  
+                  <div class="text-center">
+                    <div class="text-sm text-gray-500 mb-1">AWAY</div>
+                    <h3 class="font-bold text-lg text-gray-800">{fixture.away}</h3>
+                  </div>
+                </div>
+                
+                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                  <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt text-[#DC143C] mr-2"></i>
+                    <span class="text-sm text-gray-700">{fixture.venue}</span>
+                  </div>
+                  <div class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                    <i class="fas fa-calendar-day mr-1"></i> 
+                    {fixture.date.split(',')[0]}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Historic Venues Section -->
+        <div class="bg-gradient-to-r from-[#8B0000] to-[#DC143C] rounded-2xl p-8 mb-16 shadow-xl">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+              <div class="relative">
+                <div class="w-48 h-48 rounded-full bg-[#FFD700] flex items-center justify-center">
+                  <i class="fas fa-award text-[#8B0000] text-6xl"></i>
+                </div>
+                <div class="absolute -top-4 -right-4 bg-[#FFD700] text-[#8B0000] font-bold rounded-full w-16 h-16 flex items-center justify-center">
+                  1872
+                </div>
+              </div>
+            </div>
+            <div class="md:w-2/3 md:pl-8 text-white">
+              <h2 class="text-3xl font-serif font-bold mb-4">Historic Venues</h2>
+              <p class="mb-4">
+                Our fixtures showcase the grandeur of football's most iconic stadiums, where generations of fans have witnessed unforgettable moments. 
+                From the roaring crowd at Old Trafford to the legendary atmosphere of the Santiago Bernabeu, 
+                these venues have been the stage for football's greatest stories.
+              </p>
+              <p>
+                Each match is a celebration of tradition and passion, where modern football meets the rich heritage that makes the beautiful game timeless.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  
+  .fixture-card {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .fixture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .border-l-8 {
+    border-left-width: 8px;
+  }
+  
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-to-b {
+    background: linear-gradient(to bottom, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  }
+  
+  .text-[#DC143C] {
+    color: #DC143C;
+  }
+  
+  .text-[#FFD700] {
+    color: #FFD700;
+  }
+  
+  .text-[#8B0000] {
+    color: #8B0000;
+  }
+  
+  .bg-[#DC143C] {
+    background-color: #DC143C;
+  }
+  
+  .bg-[#FFD700] {
+    background-color: #FFD700;
+  }
+  
+  .bg-[#8B0000] {
+    background-color: #8B0000;
+  }
+</style>

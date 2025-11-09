@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Latest News from Stadium Spotlight";
+const pageDescription = "Stay updated with the latest happenings in football, from historic matches to emerging talents, all illuminated through the lens of timeless passion and glory.";
+const featuredStories = [
+  {
+    title: "Iconic Stadium Renovation Unveiled",
+    excerpt: "The historic Wembley Stadium reveals stunning upgrades honoring its 1923 origins. Fans rejoice as classic architecture meets cutting-edge facilities.",
+    icon: "fa-landmark"
+  },
+  {
+    title: "Rising Star Spotlight: Young Prodigy's Debut",
+    excerpt: "Meet 18-year-old forward Elena Vargas, who scored a hat-trick in her international debut, echoing legends like Pelé.",
+    icon: "fa-trophy"
+  },
+  {
+    title: "Vintage Match Replay: 1966 World Cup Glory",
+    excerpt: "Relive England's triumphant final against West Germany with exclusive archival footage and player interviews.",
+    icon: "fa-history"
+  }
+];
+const upcomingEvents = [
+  {
+    title: "Heritage Football Festival",
+    date: "October 15, 2023",
+    description: "A celebration of football history featuring vintage jerseys and classic matches"
+  },
+  {
+    title: "Stadium Tour: Wembley Legacy",
+    date: "October 22, 2023",
+    description: "Exclusive behind-the-scenes access to the iconic stadium's most significant moments"
+  },
+  {
+    title: "Youth Academy Showcase",
+    date: "November 5, 2023",
+    description: "Watch emerging talents compete in a historic tournament format"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-[#DC143C] to-[#8B0000] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNMCAwTDYwIDYwTTYwIDBMMCA2MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=')]"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 tracking-wide">
+          {pageTitle}
+        </h1>
+        <p class="text-xl md:text-2xl text-[#FFD700] font-serif italic mb-8">
+          Illuminating Football's Timeless Passion and Glory
+        </p>
+        <div class="flex justify-center">
+          <div class="w-24 h-1 bg-[#FFD700]"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Stories Section -->
+  <section class="py-16 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#1a1a1a] mb-4">Featured Stories</h2>
+        <div class="w-24 h-1 bg-[#DC143C] mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredStories.map((story, index) => (
+          <div key={index} class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 border-8 border-[#FFD700]">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <i class={`fas ${story.icon} text-3xl text-[#DC143C] mr-3`}></i>
+                <h3 class="text-xl font-bold font-serif text-[#1a1a1a]">{story.title}</h3>
+              </div>
+              <p class="text-gray-700 leading-relaxed">{story.excerpt}</p>
+              <div class="mt-6 flex justify-between items-center">
+                <span class="text-sm font-semibold text-[#DC143C]">Read More</span>
+                <i class="fas fa-arrow-right text-[#DC143C]"></i>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events Section -->
+  <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#1a1a1a] mb-4">Upcoming Events</h2>
+        <div class="w-24 h-1 bg-[#DC143C] mx-auto"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          {upcomingEvents.map((event, index) => (
+            <div key={index} class="bg-gradient-to-r from-[#1a1a1a] to-[#333] rounded-xl p-6 text-white transform transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+              <div class="flex flex-col md:flex-row md:items-center justify-between">
+                <div class="mb-4 md:mb-0">
+                  <div class="flex items-center mb-2">
+                    <span class="text-[#FFD700] font-bold text-lg mr-3">#{index + 1}</span>
+                    <h3 class="text-2xl font-serif font-bold">{event.title}</h3>
+                  </div>
+                  <p class="text-[#FFD700] font-semibold mb-2">{event.date}</p>
+                  <p class="text-gray-300">{event.description}</p>
+                </div>
+                <div class="flex-shrink-0">
+                  <div class="bg-[#DC143C] w-16 h-16 rounded-full flex items-center justify-center">
+                    <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="py-20 bg-gradient-to-r from-[#8B0000] to-[#DC143C]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="text-5xl text-[#FFD700] mb-6">"</div>
+        <blockquote class="text-2xl md:text-3xl font-serif text-white italic mb-8">
+          Football is a game of passion and heritage that connects generations through the timeless beauty of the beautiful game.
+        </blockquote>
+        <p class="text-xl text-[#FFD700] font-serif font-bold">- Stadium Spotlight Editorial Team</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#1a1a1a] mb-4">Stay Connected</h2>
+        <p class="text-gray-600 mb-8 text-lg">Subscribe to our newsletter for the latest updates and exclusive content</p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            class="flex-grow px-6 py-4 rounded-lg border-2 border-[#DC143C] focus:outline-none focus:ring-2 focus:ring-[#FFD700] text-lg"
+          />
+          <button class="px-8 py-4 bg-[#DC143C] hover:bg-[#b20a2a] text-white font-bold rounded-lg transition duration-300 transform hover:scale-105">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+  .bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  .transform.hover\\:scale-105:hover {
+    transform: scale(1.05);
+  }
+  
+  .transition.duration-300 {
+    transition: all 0.3s ease;
+  }
+  
+  .hover\\:scale-105:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover\\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+</style>
