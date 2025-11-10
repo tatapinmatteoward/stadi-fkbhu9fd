@@ -44,14 +44,17 @@ const testimonials = [
     <div class="absolute inset-0 bg-black bg-opacity-30"></div>
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-wide">
-          <span class="block">Welcome to</span>
-          <span class="block mt-2 text-[#FFD700]">Stadium Spotlight</span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-wider animate-fade-in">
+          <span class="block transform hover:scale-105 transition-transform duration-300">Welcome to</span>
+          <span class="block mt-2 text-[#FFD700] text-glow animate-pulse-subtle">Stadium Spotlight</span>
         </h1>
-        <p class="text-xl md:text-2xl text-[#FFD700] mb-8 font-serif">Illuminating Football's Timeless Passion and Glory</p>
-        <p class="text-lg text-white max-w-2xl mx-auto mb-10">
-          Step into the roaring stands of history, where the echoes of legendary goals and thunderous crowds still resonate. 
-          At Stadium Spotlight, we honor the bold vintage heritage of football—the sport that unites nations, ignites dreams, and forges unbreakable bonds.
+        <p class="text-xl md:text-2xl text-[#FFD700] mb-8 font-serif italic tracking-wide animate-slide-up">
+          Illuminating Football's Timeless Passion and Glory
+        </p>
+        <p class="text-lg text-white max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-delayed">
+          <span class="block mb-2 text-[#FFD700] font-semibold">Step into the roaring stands of history,</span>
+          where the echoes of legendary goals and thunderous crowds still resonate. 
+          At Stadium Spotlight, we honour the bold vintage heritage of football—the sport that unites nations, ignites dreams, and forges unbreakable bonds.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <button class="bg-[#FFD700] hover:bg-[#FFA500] text-[#8B0000] font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
@@ -175,6 +178,50 @@ const testimonials = [
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
+                 0 0 20px rgba(255, 215, 0, 0.3),
+                 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .animate-fade-in-delayed {
+    animation: fadeIn 1.5s ease-out 0.5s both;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1s ease-out;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSoft 3s infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSoft {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
   }
   
   .gradient-border {
