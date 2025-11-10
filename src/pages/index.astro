@@ -44,12 +44,12 @@ const testimonials = [
     <div class="absolute inset-0 bg-black bg-opacity-30"></div>
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-wide">
-          <span class="block">Welcome to</span>
-          <span class="block mt-2 text-[#FFD700]">Stadium Spotlight</span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-wider">
+          <span class="block font-serif italic transform hover:scale-105 transition-transform duration-300">Welcome to</span>
+          <span class="block mt-2 text-[#FFD700] text-shadow-glow font-extrabold tracking-widest">Stadium Spotlight</span>
         </h1>
-        <p class="text-xl md:text-2xl text-[#FFD700] mb-8 font-serif">Illuminating Football's Timeless Passion and Glory</p>
-        <p class="text-lg text-white max-w-2xl mx-auto mb-10">
+        <p class="text-xl md:text-2xl text-[#FFD700] mb-8 font-serif italic leading-relaxed animate-fade-in">Illuminating Football's Timeless Passion and Glory</p>
+        <p class="text-lg text-white max-w-2xl mx-auto mb-10 font-light leading-loose">
           Step into the roaring stands of history, where the echoes of legendary goals and thunderous crowds still resonate. 
           At Stadium Spotlight, we honor the bold vintage heritage of football—the sport that unites nations, ignites dreams, and forges unbreakable bonds.
         </p>
@@ -186,5 +186,20 @@ const testimonials = [
   .gradient-border:hover {
     background: linear-gradient(white, white) padding-box, 
                 linear-gradient(45deg, #FFD700, #DC143C) border-box;
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
+                 0 0 20px rgba(255, 215, 0, 0.3),
+                 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
   }
 </style>
